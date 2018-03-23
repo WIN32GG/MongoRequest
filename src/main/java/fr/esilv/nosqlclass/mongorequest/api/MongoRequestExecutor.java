@@ -18,7 +18,7 @@ public interface MongoRequestExecutor {
 	 * @param password
 	 * @return
 	 */
-	public ConnectionResult connectToMongo(String host, int port, String username, String password);
+	public ConnectionResult connectToMongo(String host, int port, String username, char[] password,String database);
 	
 	/**
 	 * Connect to a mongodb database without specifing a login
@@ -33,7 +33,7 @@ public interface MongoRequestExecutor {
 	 * @param jsonQuery
 	 * @return
 	 */
-	public MongoResultBase query(String jsonQuery);
+	public MongoResultBase query(String database,String collection,String jsonQuery);
 	
 	/**
 	 * Get the status of this connector
