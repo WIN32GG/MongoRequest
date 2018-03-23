@@ -62,7 +62,6 @@ public class MongoConnector implements MongoRequestExecutor {
 				e.printStackTrace();
 				return ConnectionResult.INTERNAL_ERROR;
 			};
-			System.out.println("ok");
 			return ConnectionResult.SUCCESS;
 			
 		}
@@ -93,7 +92,7 @@ public class MongoConnector implements MongoRequestExecutor {
 		catch(Exception e) 
 		{
 			e.printStackTrace();
-			mongoResultBase = new MongoResultBase(true,"");
+			mongoResultBase = new MongoResultBase(true,e.getClass().getSimpleName()+" "+e.getMessage());
 		}
 		// TODO Auto-generated method stub
         
