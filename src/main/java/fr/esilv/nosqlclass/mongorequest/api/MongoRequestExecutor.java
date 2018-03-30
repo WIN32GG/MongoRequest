@@ -33,7 +33,7 @@ public interface MongoRequestExecutor {
 	 * @param jsonQuery
 	 * @return
 	 */
-	public MongoResultBase query(String database,String collection,String jsonQuery);
+	public MongoResultBase query(String database,String collection,String jsonQuery, int maxResults);
 	
 	/**
 	 * Get the status of this connector

@@ -8,11 +8,22 @@ package fr.esilv.nosqlclass.mongorequest.api;
 public class MongoResultBase {
 
 	public boolean isError = false;
-	public String response;
+	public String response = "";
 	
 	public MongoResultBase(boolean error, String rawResponse) {
 		this.isError = error;
 		this.response = rawResponse;
+	}
+	
+	public MongoResultBase() {
+		
+	}
+
+	public static MongoResultBase error(String string) {
+		MongoResultBase res = new MongoResultBase();
+		res.isError = true;
+		res.response = string;
+		return res;
 	}
 	
 	
